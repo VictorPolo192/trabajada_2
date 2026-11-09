@@ -1,0 +1,23 @@
+{
+  "name": "presupuesta-mi-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Calculadora de presupuestos web: API con Node.js y Express (backend) e interfaz React (frontend).",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n backend,frontend -c blue,magenta \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "start": "npm start -w backend",
+    "build": "npm run build -w frontend",
+    "test": "npm test -w backend"
+  },
+  "engines": {
+    "node": ">=22.9"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "type": "module"
+}
